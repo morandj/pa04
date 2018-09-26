@@ -1,31 +1,37 @@
-import { h, Component } from 'preact';
-import { Router } from 'preact-router';
+import { Component } from 'preact';
 
 import Header from './header';
-
-// Code-splitting is automated for routes
-import Home from '../routes/home';
-import Profile from '../routes/profile';
+// import { Button, Icon } from 'preact-mdl';
+import MapContainer from './maps';
 
 export default class App extends Component {
-	
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
-	handleRoute = e => {
-		this.currentUrl = e.url;
-	};
 
 	render() {
 		return (
 			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
+
+				<div id="header">
+					<Header />
+				</div>
+
+				<div id="map">
+					<MapContainer />
+				</div>
+
+				{/* <div className="buttonContainer">
+					<Button
+						fab
+						colored
+						raised
+						onClick={this.toggleCameraModal}
+					>
+						<Icon icon="camera" />
+					</Button>
+				</div> */}
+
+				<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+				<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
+
 			</div>
 		);
 	}
