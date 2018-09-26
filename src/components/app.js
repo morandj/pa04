@@ -1,7 +1,8 @@
 import { Component } from 'preact';
 
 import Header from './header';
-// import { Button, Icon } from 'preact-mdl';
+import mdl from 'material-design-lite/material';
+import { Button, Icon } from 'preact-mdl';
 import MapContainer from './maps';
 
 export default class App extends Component {
@@ -18,7 +19,7 @@ export default class App extends Component {
 					<MapContainer />
 				</div>
 
-				{/* <div className="buttonContainer">
+				<div class="buttonContainer">
 					<Button
 						fab
 						colored
@@ -27,7 +28,7 @@ export default class App extends Component {
 					>
 						<Icon icon="camera" />
 					</Button>
-				</div> */}
+				</div>
 
 				<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 				<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
